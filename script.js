@@ -82,3 +82,27 @@ form?.addEventListener('submit', (event) => {
     result.classList.add('show');
   }
 });
+
+// V8 mobile navigation polish
+if (menuButton && nav) {
+  const syncMenuState = () => {
+    const isOpen = nav.classList.contains('open');
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+    menuButton.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  };
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      syncMenuState();
+      menuButton.focus();
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!nav.classList.contains('open')) return;
+    if (nav.contains(event.target) || menuButton.contains(event.target)) return;
+    nav.classList.remove('open');
+    syncMenuState();
+  });
+}
