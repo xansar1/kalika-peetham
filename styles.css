@@ -973,3 +973,373 @@ button,input,textarea{font:inherit}
   .action-image{ height:330px; }
   .premium-program-grid{ gap:16px; }
 }
+
+/* =========================================================
+   V9 — Seed Plant for Prosperity / Prakriti Sanathan page
+   Deep green + temple gold visual system, integrated into the
+   existing Kalika Peetham premium design.
+   ========================================================= */
+.seed-page{--seed-green:#0d3826;--seed-green-2:#145139;--seed-deep:#08271a;--seed-gold:#caa03e;--seed-pale:#f4ecd9;--seed-ink:#173326;background:#fffdf7}
+.seed-topbar{background:var(--seed-deep)}
+.seed-nav-link{color:var(--seed-green)!important}
+.seed-nav-link::after{background:var(--seed-green)!important}
+.seed-hero{position:relative;overflow:hidden;padding:76px 0 62px;background:radial-gradient(circle at 80% 17%,rgba(202,160,62,.18),transparent 28%),linear-gradient(135deg,#fdfbf3 0%,#f1ead8 100%)}
+.seed-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(13,56,38,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(13,56,38,.035) 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(to bottom,#000,transparent 85%);pointer-events:none}
+.seed-hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:.9fr 1.1fr;gap:58px;align-items:center}
+.seed-kicker{margin:0 0 15px;color:#9e7826;font-size:10px;line-height:1.4;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.seed-kicker.light{color:#e5c66f}
+.seed-hero h1,.seed-heading h2,.seed-center-heading h2,.seed-patron-copy h2,.seed-partner-head h2,.seed-fifty-copy h2,.seed-closing h2{font-family:"Cormorant Garamond",serif;font-weight:600;letter-spacing:-.035em}
+.seed-hero h1{margin:0;color:var(--seed-deep);font-size:clamp(66px,7vw,104px);line-height:.83}
+.seed-hero h1 em{font-style:normal;color:#1d5c40}
+.seed-subtitle{margin:24px 0 0;color:#9a7021;font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.18;font-weight:600}
+.seed-lead{max-width:620px;margin:21px 0 0;color:#5b5b4e;font-size:15px;line-height:1.8}
+.seed-hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:29px}
+.seed-btn-gold{background:linear-gradient(135deg,#b7892f,#e2be62);color:#193326;box-shadow:0 14px 35px rgba(154,112,27,.22)}
+.seed-btn-gold:hover{box-shadow:0 18px 40px rgba(154,112,27,.34)}
+.seed-btn-outline{border-color:rgba(18,75,52,.35);background:rgba(255,255,255,.6);color:#153f2d}
+.seed-btn-outline:hover{background:#153f2d;color:#fff}
+.seed-btn-light{background:#fffdf7;border-color:rgba(202,160,62,.55);color:#183f2e}
+.seed-btn-light:hover{background:#173f2d;color:#fff}
+.seed-hero-photo{position:relative;margin:0;min-height:560px;border-radius:4px;overflow:hidden;background:#d7c59b;border:1px solid rgba(117,83,29,.18);box-shadow:0 30px 80px rgba(32,48,30,.18)}
+.seed-hero-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center 48%}
+.seed-hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(3,25,15,.82));pointer-events:none}
+.seed-hero-photo figcaption{position:absolute;z-index:2;left:28px;right:28px;bottom:24px;color:#fff}
+.seed-hero-photo figcaption span{display:block;color:#dfc26b;font-size:9px;letter-spacing:.18em;text-transform:uppercase}
+.seed-hero-photo figcaption strong{display:block;margin-top:4px;font-family:"Cormorant Garamond",serif;font-size:25px;font-weight:600;line-height:1.15}
+.seed-hero-banner{position:relative;z-index:2;margin-top:46px;padding:8px;background:#fff;border:1px solid rgba(13,56,38,.12);box-shadow:0 25px 65px rgba(30,52,32,.11)}
+.seed-hero-banner img{width:100%;aspect-ratio:2/1;object-fit:cover}
+.seed-subnav{position:sticky;top:86px;z-index:80;background:rgba(10,48,32,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.seed-subnav-inner{display:flex;align-items:center;gap:26px;min-height:50px;overflow:auto;scrollbar-width:none}
+.seed-subnav-inner::-webkit-scrollbar{display:none}
+.seed-subnav a{flex:0 0 auto;color:#e7dbc0;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 0;transition:.2s}
+.seed-subnav a:hover{color:#f0c967}
+.seed-section{padding:106px 0}
+.seed-two-col{display:grid;grid-template-columns:.85fr 1.15fr;gap:88px;align-items:start}
+.seed-two-col-top{align-items:start}
+.seed-heading h2,.seed-center-heading h2,.seed-patron-copy h2,.seed-partner-head h2,.seed-fifty-copy h2{margin:0;color:#153b2a;font-size:clamp(48px,5vw,68px);line-height:.97}
+.seed-heading>p:last-child{margin:20px 0 0;color:#6f6759;line-height:1.75}
+.seed-rich-copy p{margin:0 0 18px;color:#655f54;font-size:15px}
+.seed-rich-copy .seed-intro{color:#2e4238;font-size:20px;line-height:1.7}
+.seed-green-section{background:linear-gradient(135deg,#082b1c,#124832);color:#fff;position:relative;overflow:hidden}
+.seed-green-section::after{content:"";position:absolute;right:-150px;bottom:-180px;width:520px;height:520px;border:1px solid rgba(229,198,111,.12);border-radius:50%;box-shadow:0 0 0 70px rgba(229,198,111,.03),0 0 0 140px rgba(229,198,111,.02)}
+.seed-patron-grid{position:relative;z-index:1;display:grid;grid-template-columns:.78fr 1.22fr;gap:76px;align-items:center}
+.seed-patron-photo{margin:0;min-height:590px;overflow:hidden;border:1px solid rgba(229,198,111,.35);padding:10px;background:rgba(255,255,255,.035);box-shadow:0 30px 75px rgba(0,0,0,.26)}
+.seed-patron-photo img{width:100%;height:100%;min-height:568px;object-fit:cover;object-position:center}
+.seed-patron-copy h2{color:#fff}
+.seed-patron-copy>p{margin:20px 0 0;max-width:730px;color:#d9ded7;font-size:15px}
+.seed-motto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:30px}
+.seed-motto-grid span{padding:16px;border:1px solid rgba(229,198,111,.18);background:rgba(255,255,255,.035);color:#bfc9c1;font-size:10px;line-height:1.55;text-transform:uppercase;letter-spacing:.07em}
+.seed-motto-grid strong{color:#e7c66e}
+.seed-patron-card{margin-top:28px;padding:26px 28px;border-left:3px solid #d0a444;background:rgba(255,255,255,.05)}
+.seed-patron-card>span{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#dfbf67}
+.seed-patron-card h3{margin:7px 0 10px;font-family:"Cormorant Garamond",serif;font-size:31px;line-height:1.05;color:#fff}
+.seed-patron-card p{margin:0;color:#cbd3cd;font-size:12px;line-height:1.7}
+.seed-center-heading{max-width:900px;margin:0 auto 48px;text-align:center}
+.seed-center-heading>p:last-child{max-width:760px;margin:20px auto 0;color:#71695b}
+.seed-center-heading.light h2{color:#fff}.seed-center-heading.light>p:last-child{color:#c7d1ca}
+.seed-mission-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;max-width:1040px;margin:auto}
+.seed-mission-card{position:relative;min-height:210px;padding:33px 34px;border:1px solid rgba(13,56,38,.12);background:#fffaf0;overflow:hidden}
+.seed-mission-card:last-child{grid-column:1/-1;min-height:180px}
+.seed-mission-card>span{position:absolute;right:24px;top:16px;font-family:"Cormorant Garamond",serif;font-size:48px;color:rgba(17,75,52,.1)}
+.seed-mission-card h3{margin:0 50px 13px 0;font-family:"Cormorant Garamond",serif;font-size:31px;line-height:1;color:#173c2b}
+.seed-mission-card p{margin:0;color:#70675a;font-size:13px}
+.seed-sandalwood{background:#f3ead8}
+.seed-reason-list{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(13,56,38,.18);border-left:1px solid rgba(13,56,38,.18)}
+.seed-reason-list>div{display:grid;grid-template-columns:25px 1fr;gap:10px;padding:23px;border-right:1px solid rgba(13,56,38,.18);border-bottom:1px solid rgba(13,56,38,.18);background:rgba(255,255,255,.48)}
+.seed-reason-list span{color:#a67b25}.seed-reason-list p{margin:0;color:#675f53;font-size:12px}.seed-reason-list strong{display:block;color:#173c2b;font-size:13px}
+.seed-partner{background:var(--seed-deep);color:#fff}
+.seed-partner-head{max-width:900px;margin-bottom:42px}
+.seed-partner-head h2{color:#fff}.seed-partner-head>p{max-width:800px;color:#c8d3cb}
+.seed-service-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.12);border-left:1px solid rgba(255,255,255,.12)}
+.seed-service-card{min-height:260px;padding:31px 28px;border-right:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
+.seed-service-card>span{color:#d5ae50;font-size:10px;letter-spacing:.18em}.seed-service-card h3{margin:35px 0 12px;font-family:"Cormorant Garamond",serif;font-size:30px;line-height:1;color:#fff}.seed-service-card p{margin:0;color:#bac8bf;font-size:12px}
+.seed-fifty{background:#fffdf7}
+.seed-fifty-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
+.seed-fifty-copy p:not(.seed-kicker){max-width:700px;color:#695f53}.seed-fifty-copy .btn{margin-top:20px}
+.seed-number-card{display:grid;place-items:center;min-height:340px;background:radial-gradient(circle at 50% 35%,#206044,#0b321f);color:#fff;border:10px solid #efe2c0;outline:1px solid rgba(202,160,62,.45);text-align:center;box-shadow:0 28px 60px rgba(25,57,35,.18)}
+.seed-number-card strong{font-family:"Cormorant Garamond",serif;font-size:150px;line-height:.75;color:#e4c160}.seed-number-card span{margin-top:10px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#cbd7ce}
+.seed-potential{background:#f5efe1}
+.seed-table-wrap{max-width:1000px;margin:auto}
+.seed-value-table{width:100%;border-collapse:collapse;background:#fff}
+.seed-value-table th,.seed-value-table td{padding:16px 18px;border:1px solid #ded5c3;text-align:left;font-size:13px}
+.seed-value-table th{background:#103b29;color:#fff;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.seed-value-table tbody tr:nth-child(even){background:#faf6ec}
+.seed-value-table td:last-child{font-weight:700;color:#234c38}
+.seed-value-table .seed-total-row{background:#efe0af!important}.seed-value-table .seed-total-row td{font-weight:800;color:#433315}
+.seed-disclaimer{padding:18px 20px;border:1px solid #c7a34d;border-top:0;background:#fffaf0;color:#70675c;font-size:11px;line-height:1.65}.seed-disclaimer strong{color:#614815}
+.seed-benefits{background:#fffdf8}
+.seed-benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.seed-benefit-grid div{position:relative;padding:20px 20px 20px 43px;background:#f4eddd;border:1px solid rgba(13,56,38,.1);color:#173c2b;font-size:12px;font-weight:700}.seed-benefit-grid div::before{content:"✓";position:absolute;left:18px;color:#a77e29}
+.seed-how{background:linear-gradient(145deg,#092b1d,#134932);color:#fff}
+.seed-steps{max-width:940px;margin:0 auto;display:grid;gap:8px}
+.seed-step{display:grid;grid-template-columns:78px 1fr;gap:22px;align-items:center;padding:22px 26px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.11)}
+.seed-step>span{font-family:"Cormorant Garamond",serif;font-size:46px;color:#d7b75c;line-height:1}
+.seed-step h3{margin:0 0 5px;font-family:"Cormorant Garamond",serif;font-size:26px;color:#fff}.seed-step p{margin:0;color:#c1cec5;font-size:12px}
+.seed-participation-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:46px}
+.seed-participation-card{min-height:250px;padding:29px 30px;background:#f5eee0;border:1px solid rgba(13,56,38,.12)}
+.seed-participation-card>span{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#9f792a}.seed-participation-card h3{margin:25px 0 11px;font-family:"Cormorant Garamond",serif;font-size:31px;line-height:1;color:#173c2b}.seed-participation-card p{margin:0;color:#70675b;font-size:12px}.seed-participation-card a{display:inline-block;margin-top:18px;color:#17432f;font-size:11px;font-weight:800}
+.seed-interest-form{display:grid;grid-template-columns:.78fr 1.22fr;gap:28px;padding:38px;background:#fff;border:1px solid rgba(13,56,38,.12);box-shadow:0 24px 60px rgba(34,48,34,.09)}
+.seed-form-intro{grid-row:1/4}.seed-form-intro h3{margin:0;font-family:"Cormorant Garamond",serif;font-size:38px;line-height:1;color:#173c2b}.seed-form-intro>p:last-child{color:#6c6458;font-size:12px}.seed-interest-pills{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.seed-interest-pills input{position:absolute;opacity:0;pointer-events:none}.seed-interest-pills span{display:flex;align-items:center;justify-content:center;min-height:44px;padding:8px;border:1px solid #d9d1bf;background:#fffaf0;color:#4e594f;font-size:9px;font-weight:700;text-align:center;cursor:pointer}.seed-interest-pills input:checked+span{background:#123f2c;color:#fff;border-color:#123f2c}
+.seed-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.seed-form-grid label{display:grid;gap:6px}.seed-form-grid label>span{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:#6a6558;font-weight:800}.seed-form-grid input,.seed-form-grid textarea{width:100%;border:1px solid #d8d0bf;background:#fffdf8;padding:12px 13px;color:#243d2f;outline:0}.seed-form-grid input{min-height:47px}.seed-form-grid textarea{resize:vertical}.seed-form-grid input:focus,.seed-form-grid textarea:focus{border-color:#9c7928;box-shadow:0 0 0 3px rgba(202,160,62,.12)}.seed-form-full{grid-column:1/-1}.seed-form-submit{grid-column:2}.seed-form-note{grid-column:2;margin:-12px 0 0;color:#8a8173;font-size:9px}.seed-form-result{grid-column:2;display:none;padding:13px 15px;background:#eff6ef;border-left:3px solid #245d42;color:#31503d;font-size:11px}.seed-form-result.show{display:block}
+.seed-faq{background:#f4ecdc}.seed-faq-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px;align-items:start}.seed-faq-list{border-top:1px solid rgba(13,56,38,.18)}.seed-faq-list details{border-bottom:1px solid rgba(13,56,38,.18);padding:0 5px}.seed-faq-list summary{position:relative;padding:20px 34px 20px 0;cursor:pointer;list-style:none;color:#173c2b;font-family:"Cormorant Garamond",serif;font-size:25px;font-weight:600}.seed-faq-list summary::-webkit-details-marker{display:none}.seed-faq-list summary::after{content:"+";position:absolute;right:4px;top:19px;color:#9a7425}.seed-faq-list details[open] summary::after{content:"−"}.seed-faq-list details p{margin:0 0 20px;color:#6d6559;font-size:12px;max-width:760px}
+.seed-closing{padding:94px 0;background:#06291b;color:#fff}.seed-closing-shell{max-width:900px;margin:auto;text-align:center}.seed-closing h2{margin:0;color:#fff;font-size:clamp(54px,6vw,78px);line-height:.95}.seed-closing p:not(.seed-kicker){max-width:760px;margin:22px auto;color:#c9d4cc;font-size:15px}.seed-closing-shell>div{display:flex;justify-content:center;gap:10px;margin:30px 0}.seed-closing small{display:block;color:#92a69a}.seed-closing small strong{color:#e3c36a}
+
+@media(max-width:1120px){
+  .seed-page .primary-nav{gap:10px;font-size:10px}
+  .seed-page .brand{min-width:210px}
+}
+@media(max-width:980px){
+  .seed-subnav{top:86px}
+  .seed-hero{padding-top:54px}
+  .seed-hero-grid,.seed-patron-grid,.seed-fifty-grid,.seed-faq-grid{grid-template-columns:1fr;gap:36px}
+  .seed-hero-photo{min-height:480px}
+  .seed-hero-banner{margin-top:28px}
+  .seed-two-col{grid-template-columns:1fr;gap:28px}
+  .seed-patron-photo{min-height:520px}.seed-patron-photo img{min-height:500px}
+  .seed-service-grid{grid-template-columns:repeat(2,1fr)}
+  .seed-interest-form{grid-template-columns:1fr}.seed-form-intro{grid-row:auto}.seed-form-submit,.seed-form-note,.seed-form-result{grid-column:1}
+}
+@media(max-width:760px){
+  .seed-page .container{width:calc(100% - 28px)}
+  .seed-page .primary-nav{gap:0;font-size:12px}
+  .seed-subnav{top:70px}
+  .seed-subnav-inner{gap:19px;min-height:46px}.seed-subnav a{font-size:8px;padding:15px 0}
+  .seed-hero{padding:42px 0 44px}.seed-hero-grid{gap:26px}
+  .seed-hero h1{font-size:clamp(51px,15vw,67px);line-height:.86}.seed-subtitle{font-size:21px}.seed-lead{font-size:13px;line-height:1.7}
+  .seed-hero-actions{display:grid;grid-template-columns:1fr;margin-top:23px}.seed-hero-actions .btn{width:100%;border-radius:11px;min-height:52px}
+  .seed-hero-photo{min-height:0;aspect-ratio:4/5;border-radius:16px}.seed-hero-photo figcaption{left:19px;right:19px;bottom:18px}.seed-hero-photo figcaption strong{font-size:20px}
+  .seed-hero-banner{padding:5px;border-radius:13px;overflow:hidden}.seed-hero-banner img{aspect-ratio:1.45/1;object-fit:cover;object-position:center}
+  .seed-section{padding:68px 0}.seed-heading h2,.seed-center-heading h2,.seed-patron-copy h2,.seed-partner-head h2,.seed-fifty-copy h2{font-size:clamp(40px,11vw,49px)}
+  .seed-rich-copy .seed-intro{font-size:17px}.seed-rich-copy p{font-size:13px}
+  .seed-patron-photo{min-height:0;aspect-ratio:4/5;border-radius:16px;padding:7px}.seed-patron-photo img{min-height:0;height:100%;border-radius:11px}
+  .seed-patron-copy>p{font-size:13px}.seed-motto-grid{grid-template-columns:1fr}.seed-patron-card{padding:22px 20px}.seed-patron-card h3{font-size:28px}
+  .seed-center-heading{margin-bottom:31px}.seed-center-heading>p:last-child{font-size:12px;line-height:1.65}
+  .seed-mission-grid,.seed-participation-grid{grid-template-columns:1fr}.seed-mission-card:last-child{grid-column:auto}.seed-mission-card{min-height:0;padding:25px 22px;border-radius:14px}.seed-mission-card h3{font-size:28px}.seed-mission-card p{font-size:12px}
+  .seed-reason-list{grid-template-columns:1fr}.seed-reason-list>div{padding:19px}
+  .seed-service-grid{grid-template-columns:1fr}.seed-service-card{min-height:0;padding:25px 22px;border-radius:0}.seed-service-card h3{margin-top:24px;font-size:27px}
+  .seed-number-card{min-height:260px;border-width:7px;border-radius:16px}.seed-number-card strong{font-size:115px}
+  .seed-table-wrap{overflow:auto;border-radius:12px}.seed-value-table{min-width:640px}.seed-value-table th,.seed-value-table td{padding:13px;font-size:11px}.seed-disclaimer{font-size:10px}
+  .seed-benefit-grid{grid-template-columns:1fr}.seed-benefit-grid div{border-radius:11px}
+  .seed-step{grid-template-columns:50px 1fr;gap:14px;padding:19px 17px;border-radius:12px}.seed-step>span{font-size:35px}.seed-step h3{font-size:24px}.seed-step p{font-size:11px}
+  .seed-participation-card{min-height:0;padding:25px 22px;border-radius:14px}
+  .seed-interest-form{padding:23px 18px;border-radius:16px}.seed-form-intro h3{font-size:34px}.seed-interest-pills{grid-template-columns:1fr 1fr}.seed-form-grid{grid-template-columns:1fr}.seed-form-full{grid-column:auto}.seed-form-submit{width:100%;border-radius:10px}
+  .seed-faq-list summary{font-size:22px}.seed-closing{padding:68px 0}.seed-closing h2{font-size:52px}.seed-closing p:not(.seed-kicker){font-size:13px}.seed-closing-shell>div{display:grid;grid-template-columns:1fr}.seed-closing-shell .btn{width:100%;border-radius:11px}
+}
+@media(max-width:390px){
+  .seed-hero h1{font-size:49px}.seed-subtitle{font-size:19px}.seed-hero-photo{aspect-ratio:1/1.2}.seed-interest-pills{grid-template-columns:1fr}
+}
+
+/* =========================================================
+   V10 — premium navigation + authentic imagery polish
+   ========================================================= */
+
+/* Keep the full desktop navigation on one elegant line. */
+.site-header .nav-shell{
+  width:min(1320px,calc(100% - 48px));
+  height:82px;
+  gap:24px;
+}
+.site-header .brand{
+  min-width:238px;
+  flex:0 0 auto;
+}
+.site-header .brand img{
+  width:54px;
+  height:54px;
+}
+.site-header .brand strong{
+  font-size:22px;
+}
+.primary-nav{
+  flex:1 1 auto;
+  justify-content:flex-end;
+  gap:16px;
+  font-size:11.5px;
+  letter-spacing:-.01em;
+}
+.primary-nav>a{
+  white-space:nowrap;
+  padding:12px 0;
+}
+.primary-nav .nav-cta{
+  flex:0 0 auto;
+  padding:11px 17px;
+  box-shadow:0 7px 22px rgba(91,12,22,.07);
+}
+
+/* Main homepage: use the real ceremony photograph without the old offset frame. */
+.hero-photo-stage::before{display:none!important}
+.photo-hero .hero-grid{
+  grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);
+  gap:48px;
+}
+.hero-main-photo{
+  aspect-ratio:16/9;
+  border-radius:16px;
+  border:1px solid rgba(115,73,37,.16);
+  box-shadow:0 26px 66px rgba(73,34,20,.17);
+}
+.hero-main-photo img{
+  object-position:center 50%;
+}
+
+/* Seed Plant page: cinematic plants-only hero. */
+.seed-hero-grid{
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:52px;
+}
+.seed-hero-photo{
+  min-height:0;
+  aspect-ratio:16/10;
+  border-radius:18px;
+  border:1px solid rgba(117,83,29,.19);
+  box-shadow:0 30px 74px rgba(27,54,35,.18);
+}
+.seed-hero-photo img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 52%;
+}
+.seed-hero-photo::after{
+  background:linear-gradient(180deg,transparent 62%,rgba(3,25,15,.76));
+}
+.seed-hero-banner{
+  border-radius:16px;
+  overflow:hidden;
+}
+
+/* Make the second Seed Plant navigation feel like an intentional premium sub-menu. */
+.seed-subnav{
+  top:82px;
+  box-shadow:0 10px 30px rgba(5,37,24,.08);
+}
+.seed-subnav-inner{
+  min-height:52px;
+  justify-content:center;
+  gap:30px;
+}
+.seed-subnav a{
+  position:relative;
+  padding:18px 0 16px;
+  letter-spacing:.075em;
+}
+.seed-subnav a::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  right:50%;
+  bottom:9px;
+  height:1px;
+  background:#e0bd61;
+  transition:.22s ease;
+}
+.seed-subnav a:hover::after{
+  left:0;
+  right:0;
+}
+
+/* User-provided real About image gets a refined documentary presentation. */
+.seed-patron-photo{
+  min-height:0;
+  aspect-ratio:4/5;
+  border-radius:18px;
+  padding:8px;
+  background:rgba(255,255,255,.045);
+  box-shadow:0 32px 80px rgba(0,0,0,.24);
+}
+.seed-patron-photo img{
+  min-height:0;
+  height:100%;
+  border-radius:12px;
+  object-fit:cover;
+  object-position:center 45%;
+}
+
+@media(max-width:1180px) and (min-width:981px){
+  .site-header .nav-shell{width:min(1140px,calc(100% - 32px));gap:16px}
+  .site-header .brand{min-width:216px}
+  .site-header .brand img{width:50px;height:50px}
+  .site-header .brand strong{font-size:20px}
+  .site-header .brand small{font-size:8px}
+  .primary-nav{gap:10px;font-size:10px}
+  .primary-nav .nav-cta{padding:10px 13px}
+  .seed-subnav-inner{gap:20px;justify-content:flex-start}
+}
+
+@media(max-width:980px){
+  .site-header .nav-shell{
+    width:min(1180px,calc(100% - 40px));
+    height:86px;
+  }
+  .primary-nav{justify-content:flex-start}
+  .seed-subnav{top:86px}
+  .seed-subnav-inner{justify-content:flex-start}
+  .seed-hero-grid{grid-template-columns:1fr;gap:30px}
+  .seed-hero-photo{aspect-ratio:16/9}
+}
+
+@media(max-width:760px){
+  .site-header .nav-shell{
+    width:calc(100% - 30px);
+    height:70px;
+    gap:10px;
+  }
+  .site-header .brand{min-width:0}
+  .site-header .brand img{width:44px;height:44px}
+  .site-header .brand strong{font-size:18px}
+  .primary-nav{
+    justify-content:flex-start;
+    gap:0;
+    font-size:12px;
+  }
+  .primary-nav>a{white-space:normal}
+  .seed-subnav{top:70px}
+  .seed-subnav-inner{
+    justify-content:flex-start;
+    gap:20px;
+    padding-inline:2px;
+  }
+  .seed-hero{
+    padding:38px 0 46px;
+  }
+  .seed-hero-grid{
+    gap:24px;
+  }
+  .seed-hero-photo{
+    aspect-ratio:4/3;
+    border-radius:16px;
+  }
+  .seed-hero-photo img{
+    object-position:center 52%;
+  }
+  .seed-hero-photo figcaption{
+    left:18px;
+    right:18px;
+    bottom:17px;
+  }
+  .seed-patron-photo{
+    aspect-ratio:4/5;
+    border-radius:16px;
+  }
+  .photo-hero .hero-grid{
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+  .hero-main-photo{
+    aspect-ratio:16/10;
+    border-radius:16px;
+  }
+  .hero-main-photo img{
+    object-position:center 46%;
+  }
+}
+
+@media(max-width:390px){
+  .site-header .nav-shell{width:calc(100% - 24px)}
+  .site-header .brand strong{font-size:16.5px}
+  .seed-hero-photo{aspect-ratio:1.18/1}
+  .hero-main-photo{aspect-ratio:4/3}
+}
