@@ -1,3 +1,5 @@
+import { callSupabaseRpc } from "./_supabase.js";
+
 const PLAN_CONFIG = {
   sadhu_seva: {
     env: "RAZORPAY_PLAN_SADHU_SEVA",
@@ -100,6 +102,21 @@ export default async function handler(request, response) {
       return json(response, 502, {
         error: data?.error?.description || "Unable to start Razorpay subscription."
       });
+    }
+
+    try {
+      await callSupabaseRpc("create_subscription_record", {
+        p_full_name: name,
+        p_mobile: mobile,
+        p_email: email,
+        p_location: location,
+        p_plan_key: planKey,
+        p_plan_label: plan.label,
+        p_razorpay_subscription_id: data.id
+      });
+    } catch (dbError) {
+      console.error("Subscription created in Razorpay but database save failed", dbError);
+      // Do not fail checkout creation after Razorpay already created a subscription.
     }
 
     return json(response, 200, {
