@@ -151,7 +151,7 @@
                 <li>Each participant is recognised as a <strong>Sadhu Sevak</strong>.</li>
                 <li>Those who inspire at least <strong>ten people</strong> to undertake Sadhu Seva are recognised as <strong>Distinguished Members</strong> of the Samiti.</li>
               </ul>
-              <a href="#join" class="btn btn-gold" data-interest="Premium Member" data-premium-plan="Sadhu Seva — minimum ₹128/month">Choose Sadhu Seva <span>→</span></a>
+              <a href="#join" class="btn btn-gold" data-interest="Premium Member" data-premium-plan="sadhu_seva">Choose Sadhu Seva <span>→</span></a>
             </article>
 
             <article class="premium-program-card trustee-card premium-glow-card">
@@ -169,7 +169,7 @@
                 <li>An annual <strong>Maha Yajna</strong> will be conducted under Naga sannyasis at a sacred centre, with archana in the names of trustees and Distinguished Members and annual prasadam.</li>
                 <li>Once each year, members will also receive a rare <strong>Mahaprasadam</strong>, such as sacred water from the Amarnath Shiva Linga, a rudraksha offered in worship to Kashi Vishwanath, or a portion of Maa Kamakhya’s sacred ceremonial cloth.</li>
               </ul>
-              <a href="#join" class="btn btn-gold" data-interest="Premium Member" data-premium-plan="Bhaktamandali Trustee — ₹1,028/month">Become a Trustee <span>→</span></a>
+              <a href="#join" class="btn btn-gold" data-interest="Premium Member" data-premium-plan="trustee">Become a Trustee <span>→</span></a>
             </article>
           </div>
         </div>
@@ -320,12 +320,16 @@
 
           <div class="premium-form-note" id="premiumNote" hidden>
             <strong>★ Premium seva selected</strong>
-            <p>Choose Sadhu Seva from a minimum of ₹128 per month, or Bhaktamandali Trustee membership at ₹1,028 per month.</p>
+            <p>Choose a monthly seva pathway. Razorpay will securely handle the mandate and recurring payment authorisation.</p>
             <label class="premium-plan-field">Premium pathway
               <select name="premium_plan" id="premiumPlan">
-                <option value="Sadhu Seva — minimum ₹128/month">Sadhu Seva — minimum ₹128/month</option>
-                <option value="Bhaktamandali Trustee — ₹1,028/month">Bhaktamandali Trustee — ₹1,028/month</option>
+                <option value="sadhu_seva">Sadhu Seva — ₹128/month</option>
+                <option value="trustee">Bhaktamandali Trustee — ₹1,028/month</option>
               </select>
+            </label>
+            <label class="recurring-consent">
+              <input type="checkbox" name="recurring_consent" id="recurringConsent" value="yes">
+              <span>I understand this is a recurring monthly contribution and I authorise Razorpay to set up the payment mandate for the selected seva pathway.</span>
             </label>
           </div>
 
@@ -336,8 +340,8 @@
             <label>District / Location<input type="text" name="location" autocomplete="address-level2" placeholder="Your district or town"></label>
           </div>
           <label class="full-field">How would you like to contribute?<textarea name="message" rows="4" placeholder="Tell us briefly about your interest, skills or preferred area of seva"></textarea></label>
-          <button class="btn btn-gold full-btn" type="submit">Review Registration <span>→</span></button>
-          <p class="form-disclaimer">This downloadable demo does not transmit form data. The final deployment can connect regular membership, premium seva, trustee and volunteer registrations to WhatsApp, email, Google Sheets, payment or a database.</p>
+          <button class="btn btn-gold full-btn" id="joinSubmitButton" type="submit">Continue <span>→</span></button>
+          <p class="form-disclaimer">Premium seva uses Razorpay secure checkout. Regular member and volunteer registration storage will be connected in the next backend step. Never share OTPs, UPI PINs or card credentials with anyone from Shri Kalika Peetham.</p>
           <div class="form-result" id="formResult" aria-live="polite"></div>
         </form>
       </div>
@@ -369,6 +373,7 @@
     </div>
   </footer>
 
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

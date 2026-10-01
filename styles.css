@@ -1344,3 +1344,63 @@ button,input,textarea{font:inherit}
   .hero-main-photo{aspect-ratio:4/3}
 }
 
+
+
+/* =========================================================
+   Vercel + Razorpay recurring membership
+   ========================================================= */
+.recurring-consent{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin-top:14px;
+  padding:13px 14px;
+  border:1px solid rgba(123,83,23,.22);
+  background:rgba(255,255,255,.58);
+  color:#60491f;
+  font-size:10px;
+  line-height:1.55;
+}
+.recurring-consent input{
+  width:16px;
+  height:16px;
+  margin-top:1px;
+  accent-color:#6a1119;
+  flex:0 0 auto;
+}
+#joinSubmitButton:disabled{
+  opacity:.68;
+  cursor:wait;
+  transform:none;
+}
+#joinSubmitButton.is-loading{
+  position:relative;
+  overflow:hidden;
+}
+#joinSubmitButton.is-loading::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.22) 45%,transparent 70%);
+  animation:paymentShimmer 1.25s linear infinite;
+}
+@keyframes paymentShimmer{
+  from{transform:translateX(-120%)}
+  to{transform:translateX(120%)}
+}
+.form-result[data-type="success"]{
+  border-color:#8faf7d;
+  background:#edf7e7;
+  color:#24421d;
+}
+.form-result[data-type="error"]{
+  border-color:#c88b8b;
+  background:#fff0ef;
+  color:#721f25;
+}
+@media(max-width:680px){
+  .recurring-consent{
+    font-size:11px;
+    padding:12px;
+  }
+}
