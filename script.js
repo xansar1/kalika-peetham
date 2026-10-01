@@ -326,7 +326,9 @@ seedForm?.addEventListener('submit', async event => {
         name,
         mobile,
         email: String(data.get('seed_email') || '').trim(),
+        district: String(data.get('seed_district') || '').trim(),
         organization: org,
+        availableLand: String(data.get('seed_land') || '').trim(),
         interest,
         message: String(data.get('seed_message') || '').trim()
       })
