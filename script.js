@@ -106,3 +106,38 @@ if (menuButton && nav) {
     syncMenuState();
   });
 }
+
+// V9 — Seed Plant for Prosperity enquiry preview
+const seedForm = document.getElementById('seed-interest-form');
+const seedResult = document.getElementById('seedFormResult');
+const seedInterestInputs = [...document.querySelectorAll('input[name="seed_interest"]')];
+
+document.querySelectorAll('[data-seed-interest]').forEach(link => {
+  link.addEventListener('click', () => {
+    const wanted = link.dataset.seedInterest;
+    const target = seedInterestInputs.find(input => input.value === wanted);
+    if (target) target.checked = true;
+  });
+});
+
+seedForm?.addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(seedForm);
+  const name = String(data.get('seed_name') || '').trim();
+  const mobile = String(data.get('seed_mobile') || '').trim();
+  const interest = String(data.get('seed_interest') || 'Temple Registration');
+  const org = String(data.get('seed_org') || '').trim();
+
+  if (!name || !mobile) {
+    if (seedResult) {
+      seedResult.textContent = 'Please enter your full name and mobile number before reviewing the enquiry.';
+      seedResult.classList.add('show');
+    }
+    return;
+  }
+
+  if (seedResult) {
+    seedResult.innerHTML = `<strong>Enquiry preview ready.</strong><br>${name} · ${interest} · ${mobile}${org ? ` · ${org}` : ''}<br><span>This static preview has not sent the enquiry. Connect the form to WhatsApp, email or a backend before launch.</span>`;
+    seedResult.classList.add('show');
+  }
+});
