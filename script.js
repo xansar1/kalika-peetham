@@ -215,11 +215,49 @@ form?.addEventListener('submit', async (event) => {
     return;
   }
 
-  setFormResult(
-    '<strong>Registration details are ready.</strong><br>' +
-    name + ' · ' + interest + ' · ' + mobile +
-    '<br><span>Online storage for regular member and volunteer registrations will be connected in the next backend step.</span>'
-  );
+  setJoinLoading(true);
+  setFormResult('<strong>Saving registration…</strong><br><span>Please wait a moment.</span>');
+
+  try {
+    const saveResponse = await fetch('/api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name,
+        mobile,
+        email: String(data.get('email') || '').trim(),
+        location: String(data.get('location') || '').trim(),
+        message: String(data.get('message') || '').trim(),
+        interest
+      })
+    });
+
+    const saved = await saveResponse.json();
+    if (!saveResponse.ok || !saved.ok) {
+      throw new Error(saved.error || 'Unable to save registration.');
+    }
+
+    setFormResult(
+      '<strong>Registration received successfully.</strong><br>' +
+      '<span>Thank you, ' + name + '. Your ' +
+      (interest === 'Volunteer' ? 'volunteer' : 'member') +
+      ' registration has been saved.</span>',
+      'success'
+    );
+    form.reset();
+    const regular = interestInputs.find(input => input.value === 'Regular Member');
+    if (regular) regular.checked = true;
+    updateRegistrationMode('Regular Member');
+  } catch (error) {
+    setFormResult(
+      '<strong>Could not save registration.</strong><br><span>' +
+      String(error.message || 'Please try again.') +
+      '</span>',
+      'error'
+    );
+  } finally {
+    setJoinLoading(false);
+  }
 });
 
 // V8 mobile navigation polish
@@ -259,7 +297,7 @@ document.querySelectorAll('[data-seed-interest]').forEach(link => {
   });
 });
 
-seedForm?.addEventListener('submit', event => {
+seedForm?.addEventListener('submit', async event => {
   event.preventDefault();
   const data = new FormData(seedForm);
   const name = String(data.get('seed_name') || '').trim();
@@ -269,15 +307,54 @@ seedForm?.addEventListener('submit', event => {
 
   if (!name || !mobile) {
     if (seedResult) {
-      seedResult.textContent = 'Please enter your full name and mobile number before reviewing the enquiry.';
+      seedResult.textContent = 'Please enter your full name and mobile number before sending the enquiry.';
       seedResult.classList.add('show');
     }
     return;
   }
 
   if (seedResult) {
-    seedResult.innerHTML = `<strong>Enquiry preview ready.</strong><br>${name} · ${interest} · ${mobile}${org ? ` · ${org}` : ''}<br><span>This static preview has not sent the enquiry. Connect the form to WhatsApp, email or a backend before launch.</span>`;
+    seedResult.innerHTML = '<strong>Sending enquiry…</strong><br><span>Please wait a moment.</span>';
     seedResult.classList.add('show');
+  }
+
+  try {
+    const saveResponse = await fetch('/api/seed-enquiry', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name,
+        mobile,
+        email: String(data.get('seed_email') || '').trim(),
+        organization: org,
+        interest,
+        message: String(data.get('seed_message') || '').trim()
+      })
+    });
+
+    const saved = await saveResponse.json();
+    if (!saveResponse.ok || !saved.ok) {
+      throw new Error(saved.error || 'Unable to save enquiry.');
+    }
+
+    if (seedResult) {
+      seedResult.innerHTML =
+        '<strong>Enquiry received successfully.</strong><br>' +
+        '<span>Thank you, ' + name + '. Our team can now follow up on your ' +
+        interest + ' enquiry.</span>';
+      seedResult.dataset.type = 'success';
+      seedResult.classList.add('show');
+    }
+    seedForm.reset();
+  } catch (error) {
+    if (seedResult) {
+      seedResult.innerHTML =
+        '<strong>Could not send enquiry.</strong><br><span>' +
+        String(error.message || 'Please try again.') +
+        '</span>';
+      seedResult.dataset.type = 'error';
+      seedResult.classList.add('show');
+    }
   }
 });
 
