@@ -21,11 +21,13 @@ export default async function handler(request, response) {
   }
 
   try {
-    const id = await callSupabaseRpc("register_seed_enquiry", {
+    const id = await callSupabaseRpc("register_seed_enquiry_v2", {
       p_full_name: fullName,
       p_mobile: mobile,
       p_email: clean(body.email, 120),
+      p_district: clean(body.district, 120),
       p_organization: clean(body.organization, 150),
+      p_available_land: clean(body.availableLand, 120),
       p_interest: clean(body.interest, 100),
       p_message: clean(body.message, 1000)
     });
