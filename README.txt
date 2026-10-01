@@ -66,3 +66,26 @@ IMPORTANT
 - Regular Member / Volunteer submissions are still frontend-only until the database step.
 
 Vercel project connected to GitHub; preview branch trigger.
+
+
+SUPABASE DATABASE INTEGRATION
+- Supabase project created in ap-south-1 (Mumbai region): kalika-peetham
+- Tables:
+  members
+  volunteers
+  subscriptions
+  payments
+  seed_plant_enquiries
+- RLS enabled on all tables.
+- Website submissions go through Vercel serverless endpoints, not directly from the browser to database tables.
+- Regular member and volunteer registration now persist via /api/register.
+- Seed Plant enquiries now persist via /api/seed-enquiry.
+- Razorpay subscription creation records the subscription in Supabase.
+- Verified Razorpay webhook events update subscription/payment records.
+
+Additional Vercel environment variables required:
+  SUPABASE_URL
+  SUPABASE_PUBLISHABLE_KEY
+  SUPABASE_BACKEND_TOKEN
+
+Health endpoint now reports both razorpayConfigured and supabaseConfigured.
