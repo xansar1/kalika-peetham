@@ -64,3 +64,5 @@ IMPORTANT
 - Razorpay subscriptions require a finite billing count. Current default is 120 monthly cycles (10 years), configurable by env.
 - The webhook is signature-verified but does not persist events yet because a database has not been connected.
 - Regular Member / Volunteer submissions are still frontend-only until the database step.
+
+Vercel project connected to GitHub; preview branch trigger.
