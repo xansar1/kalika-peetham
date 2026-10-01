@@ -141,3 +141,4 @@ seedForm?.addEventListener('submit', event => {
     seedResult.classList.add('show');
   }
 });
+
