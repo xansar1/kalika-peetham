@@ -1,3 +1,4 @@
+import { callSupabaseRpc } from "./_supabase.js";
 import crypto from "node:crypto";
 
 function safeEqualHex(a, b) {
@@ -48,6 +49,31 @@ export default async function handler(request, response) {
     return response.status(400).json({
       verified: false,
       error: "Payment signature verification failed."
+    });
+  }
+
+  try {
+    await callSupabaseRpc("record_razorpay_event", {
+      p_event_type: "checkout.signature_verified",
+      p_razorpay_subscription_id: subscriptionId,
+      p_razorpay_payment_id: paymentId,
+      p_status: "verified",
+      p_amount: null,
+      p_currency: "INR",
+      p_raw_event: {
+        source: "checkout_callback",
+        verified: true,
+        razorpay_payment_id: paymentId,
+        razorpay_subscription_id: subscriptionId
+      }
+    });
+  } catch (dbError) {
+    console.error("Payment signature verified but Supabase persistence failed", dbError);
+    return response.status(500).json({
+      verified: true,
+      paymentId,
+      subscriptionId,
+      warning: "Payment verified, but database persistence failed."
     });
   }
 
