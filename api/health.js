@@ -10,6 +10,7 @@ export default function handler(request, response) {
       process.env.RAZORPAY_PLAN_SADHU_SEVA &&
       process.env.RAZORPAY_PLAN_TRUSTEE
     ),
-    supabaseConfigured: supabaseReady()
+    supabaseConfigured: supabaseReady(),
+    webhookConfigured: Boolean(process.env.RAZORPAY_WEBHOOK_SECRET)
   });
 }
