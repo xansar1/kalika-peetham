@@ -1,1 +1,294 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="theme-color" content="#f7f2e8" />
+  <meta name="description" content="Shri Kalika Peetham website is currently undergoing maintenance. We will be back soon." />
+
+  <title>Coming Soon | Shri Kalika Peetham</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #f7f2e8;
+      color: #38231e;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      padding: 30px 20px;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 380px;
+      height: 380px;
+      border: 1px solid rgba(153, 112, 54, 0.12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    body::before {
+      top: -220px;
+      left: -180px;
+    }
+
+    body::after {
+      bottom: -220px;
+      right: -180px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 760px;
+      text-align: center;
+      position: relative;
+      padding: 65px 30px;
+      border: 1px solid #d9c9a9;
+      background: rgba(255, 255, 255, 0.32);
+      box-shadow: 0 20px 70px rgba(70, 42, 28, 0.06);
+      animation: fadeUp 1s ease both;
+    }
+
+    .container::before,
+    .container::after {
+      content: "";
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      border-color: #a67a3f;
+      border-style: solid;
+    }
+
+    .container::before {
+      top: 12px;
+      left: 12px;
+      border-width: 1px 0 0 1px;
+    }
+
+    .container::after {
+      bottom: 12px;
+      right: 12px;
+      border-width: 0 1px 1px 0;
+    }
+
+    .logo-wrap {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    .temple-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 5vw, 43px);
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #57271f;
+      text-transform: uppercase;
+    }
+
+    .location {
+      margin-top: 10px;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: #9a7745;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .divider {
+      width: 75px;
+      height: 1px;
+      background: #b48b50;
+      margin: 32px auto;
+      position: relative;
+    }
+
+    .divider::after {
+      content: "✦";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f7f2e8;
+      padding: 0 10px;
+      color: #a77c40;
+      font-size: 15px;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 9px 20px;
+      border: 1px solid #d7c29e;
+      color: #98703c;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 7vw, 65px);
+      line-height: 1.05;
+      font-weight: 500;
+      color: #54251e;
+      margin-bottom: 18px;
+    }
+
+    .description {
+      max-width: 490px;
+      margin: 0 auto;
+      color: #76665a;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .bottom {
+      margin-top: 45px;
+      padding-top: 25px;
+      border-top: 1px solid #e1d5c0;
+    }
+
+    .bottom p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      color: #98703c;
+      font-style: italic;
+    }
+
+    .footer {
+      margin-top: 15px;
+      font-size: 9px;
+      color: #a3917c;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 18px 14px;
+      }
+
+      .container {
+        padding: 48px 20px;
+      }
+
+      .logo-wrap {
+        width: 105px;
+        height: 105px;
+      }
+
+      .temple-name {
+        font-size: 27px;
+        letter-spacing: 1px;
+      }
+
+      .location {
+        font-size: 9px;
+        letter-spacing: 2px;
+      }
+
+      .description {
+        font-size: 13px;
+      }
+
+      .bottom {
+        margin-top: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <div class="logo-wrap">
+      <img
+        src="assets/kalika-peetham-logo.jpg"
+        alt="Shri Kalika Peetham Logo"
+        class="logo"
+      />
+    </div>
+
+    <div class="temple-name">
+      Shri Kalika Peetham
+    </div>
+
+    <div class="location">
+      Thiruvananthapuram · Kerala
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="status">
+      Website Under Maintenance
+    </div>
+
+    <h1>
+      Something<br />
+      Sacred Is Coming.
+    </h1>
+
+    <p class="description">
+      We are currently working on a new digital experience
+      for Shri Kalika Peetham.
+
+      Our website is being updated to serve you better.
+      We appreciate your patience and understanding.
+      Please visit us again soon.
+    </p>
+
+    <div class="bottom">
+      <p>Serving Dharma, People & Nature.</p>
+
+      <div class="footer">
+        Shri Kalika Peetham · Kerala, India
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>
+
