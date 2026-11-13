@@ -1,0 +1,10 @@
+
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "routes": [
+    {
+      "src": "/(?!assets/|maintenance\\.html).*",
+      "dest": "/maintenance.html"
+    }
+  ]
+}
